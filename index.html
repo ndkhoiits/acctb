@@ -5,12 +5,13 @@
 <title>Accessible Twitter Bootstrap Components Demo</title>
 <link href="bootstrap/css/bootstrap.css" rel="stylesheet"></link>
 <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet"></link>
+<link href="demo.css" rel="stylesheet"></link>
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
 </head>
 
 <body>
-  <div class="navbar">
+  <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
       <div class="container">
         <a data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
@@ -52,6 +53,51 @@
       </div>
     </div>
     <!-- /navbar-inner -->
+  </div>
+  <div class="container">
+    <section id="button">
+    <div class="row">
+      <div class="span4">
+        <h3>Button</h3>
+        <table class="table table-bordered table-striped">
+          <tbody>
+            <tr>
+              <td>Stateful</td>
+              <td>
+                <button class="btn btn-primary" data-loading-text="loading..." id="fat-btn">Loading State</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Single toggle</td>
+              <td>
+                <button data-toggle="button" class="btn btn-primary">Single Toggle</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Checkbox</td>
+              <td>
+                <div data-toggle="buttons-checkbox" class="btn-group">
+                  <button class="btn btn-primary active">Left</button>
+                  <button class="btn btn-primary active">Middle</button>
+                  <button class="btn btn-primary active">Right</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>Radio</td>
+              <td>
+                <div data-toggle="buttons-radio" class="btn-group">
+                  <button class="btn btn-primary">Left</button>
+                  <button class="btn btn-primary">Middle</button>
+                  <button class="btn btn-primary active">Right</button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    </section>
   </div>
 </body>
 </html>
