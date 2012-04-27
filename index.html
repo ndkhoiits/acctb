@@ -3,11 +3,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Accessible Twitter Bootstrap Components Demo</title>
-<link href="bootstrap/css/bootstrap.css" rel="stylesheet"></link>
-<link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet"></link>
-<link href="demo.css" rel="stylesheet"></link>
+<link rel="stylesheet/less" href="demo.less" />
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="less-1.3.0.min.js"></script>
+<script type="text/javascript" src="bootstrap/js/bootstrap-dropdown.js"></script>
+<script type="text/javascript" src="bootstrap/js/bootstrap-button.js"></script>
 </head>
 
 <body>
@@ -54,50 +54,123 @@
     </div>
     <!-- /navbar-inner -->
   </div>
+
   <div class="container">
-    <section id="button">
-    <div class="row">
-      <div class="span4">
-        <h3>Button</h3>
-        <table class="table table-bordered table-striped">
-          <tbody>
-            <tr>
-              <td>Stateful</td>
-              <td>
-                <button class="btn btn-primary" data-loading-text="loading..." id="fat-btn">Loading State</button>
-              </td>
-            </tr>
-            <tr>
-              <td>Single toggle</td>
-              <td>
-                <button data-toggle="button" class="btn btn-primary">Single Toggle</button>
-              </td>
-            </tr>
-            <tr>
-              <td>Checkbox</td>
-              <td>
-                <div data-toggle="buttons-checkbox" class="btn-group">
-                  <button class="btn btn-primary active">Left</button>
-                  <button class="btn btn-primary active">Middle</button>
-                  <button class="btn btn-primary active">Right</button>
+    <div class="content">
+      <div class="page-header">
+        <h1>Accessibility Form</h1>
+      </div>
+      <div class="row">
+        <div class="span14">
+          <form method="POST" action="/signup">
+            <fieldset>
+              <legend>Account informations</legend>
+              <div id="username_field" class="clearfix  ">
+                <label for="username">Username</label>
+                <div class="input">
+                  <input type="text" value="" name="username" id="username"> <span class="help-inline"></span> <span class="help-block">Please choose a valid
+                      username.</span>
                 </div>
-              </td>
-            </tr>
-            <tr>
-              <td>Radio</td>
-              <td>
-                <div data-toggle="buttons-radio" class="btn-group">
-                  <button class="btn btn-primary">Left</button>
-                  <button class="btn btn-primary">Middle</button>
-                  <button class="btn btn-primary active">Right</button>
+              </div>
+              <div id="email_field" class="clearfix  ">
+                <label for="email">Email</label>
+                <div class="input">
+                  <input type="text" value="" name="email" id="email"> <span class="help-inline"></span> <span class="help-block">Enter a valid email address.</span>
                 </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+              </div>
+              <div id="password_field" class="clearfix  ">
+                <label for="password">Password</label>
+                <div class="input">
+
+                  <input type="password" value="" name="password" id="password"> <span class="help-inline"></span> <span class="help-block">A password must be at
+                      least 6 characters. </span>
+                </div>
+              </div>
+              <div id="repeatPassword_field" class="clearfix  ">
+                <label for="repeatPassword">Repeat password</label>
+                <div class="input">
+                  <input type="password" value="" name="repeatPassword" id="repeatPassword"> <span class="help-inline"></span> <span class="help-block">Please repeat
+                      your password again.</span>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend>Contact informations</legend>
+              <div id="profile_country_field" class="clearfix  ">
+                <label for="profile_country">Country</label>
+                <div class="input">
+                  <select name="profile.country" id="profile_country">
+                    <option value="" class="blank">--- Choose a country ---</option>
+                    <option value="France">France</option>
+                    <option value="Austria">Austria</option>
+                    <option value="Belgium">Belgium</option>
+                    <option value="Bulgaria">Bulgaria</option>
+                    <option value="Cyprus">Cyprus</option>
+                    <option value="Czech Republic">Czech Republic</option>
+                    <option value="Denmark">Denmark</option>
+                    <option value="Estonia">Estonia</option>
+                    <option value="Finland">Finland</option>
+                    <option value="French Guiana">French Guiana</option>
+                    <option value="Germany">Germany</option>
+                    <option value="Gibraltar">Gibraltar</option>
+                    <option value="Greece">Greece</option>
+                    <option value="Guadeloupe">Guadeloupe</option>
+                    <option value="Hungary">Hungary</option>
+                    <option value="Ireland">Ireland</option>
+                    <option value="Italy">Italy</option>
+                    <option value="Latvia">Latvia</option>
+                    <option value="Lithuania">Lithuania</option>
+                    <option value="Luxembourg">Luxembourg</option>
+                    <option value="Malta">Malta</option>
+                    <option value="Martinique">Martinique</option>
+                    <option value="Netherlands">Netherlands</option>
+                    <option value="Poland">Poland</option>
+                    <option value="Portugal">Portugal</option>
+                    <option value="Reunion">Reunion</option>
+                    <option value="Romania">Romania</option>
+                    <option value="Slovak (Republic)">Slovak (Republic)</option>
+                    <option value="Slovenia">Slovenia</option>
+                    <option value="Spain">Spain</option>
+                    <option value="Sweden">Sweden</option>
+                    <option value="United Kingdom">United Kingdom</option>
+                  </select> <span class="help-inline"></span> <span class="help-block"></span>
+                </div>
+              </div>
+              <div id="profile_address_field" class="clearfix  ">
+                <label for="profile_address">Address</label>
+                <div class="input">
+                  <textarea cols="50" name="profile.address" id="profile_address"></textarea>
+                  <span class="help-inline"></span> <span class="help-block"></span>
+                </div>
+              </div>
+              <div id="profile_age_field" class="clearfix  ">
+                <label for="profile_age">Age</label>
+                <div class="input">
+                  <input type="text" class="mini" value="" name="profile.age" id="profile_age"> <span class="help-inline"></span> <span class="help-block"></span>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset>
+              <div id="accept_field" class="clearfix  ">
+                <label for="accept"></label>
+                <div class="input">
+                  <input type="checkbox" value="true" name="accept" id="accept"> <span>You aggree the Terms and conditions</span> <span class="help-inline"></span> <span
+                    class="help-block"></span>
+                </div>
+              </div>
+            </fieldset>
+            <div class="actions">
+              <input type="submit" value="Sign Up" class="btn primary"> <a class="btn" href="/">Cancel</a>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
-    </section>
+    <footer>
+                <p>
+                    <a href="http://www.playframework.org">www.playframework.org</a>
+                </p>
+            </footer>
   </div>
 </body>
 </html>

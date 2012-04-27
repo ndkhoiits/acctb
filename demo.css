@@ -2,3 +2,30 @@ body {
 	padding-bottom: 40px;
 	padding-top: 60px;
 }
+
+.hiddenFieldSet {
+	border: medium none;
+    display: inline;
+    padding: 0;
+}
+
+.ui-button {
+    border: 1px solid #D3D3D3;
+    color: #555555;
+    font-weight: normal;
+    margin-left: 0;
+    margin-right: -0.3em;
+    border-bottom-left-radius: 4px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    overflow: visible;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    text-decoration: none !important;
+}
+
+.ui-button-text {
+        padding: 0.4em 1em;
+}
